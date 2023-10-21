@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Profile card component</title>
+
+    <style>
+      /* Josh's Custom CSS Reset: https://www.joshwcomeau.com/css/custom-css-reset/ */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      * {
+        margin: 0;
+      }
+      body {
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+      img,
+      picture,
+      video,
+      canvas,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+      input,
+      button,
+      textarea,
+      select {
+        font: inherit;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        overflow-wrap: break-word;
+      }
+      #root,
+      #__next {
+        isolation: isolate;
+      }
+      /* End of css reset*/
+      :root{
+        --clr-primary-400: hsl(227, 10%, 46%);
+        --clr-primary-500: hsl(185, 75%, 39%);
+        --clr-primary-700: hsl(229, 23%, 23%);
+
+        --clr-neutral-400: hsl(0, 0%, 59%);
+        --clr-neutral-100: hsl(0, 0%, 100%);
+
+        --fw-400: 400;
+        --fw-700: 700;
+                              
+      }
+      body {
+        font-family: "Kumbh Sans", sans-serif;
+        font-weight: var(--fw-400);
+        font-size: 18px;
+        background: var(--clr-primary-500);
+        background-image:
+          url(images/bg-pattern-top.svg),
+          url(images/bg-pattern-bottom.svg);
+        background-position:
+          bottom 40vh right 50vw,
+          top 50vh left 50vw;
+        background-repeat: no-repeat;
+        position: relitave;
+        min-height: 100vh;
+        display: grid;
+        place-content: center;
+      }
+      .card {
+        border-radius: 0.75em;
+        background: var(--clr-neutral-100);
+        overflow: hidden;
+        width: 320px;        
+      }
+      .card__top {
+        background-image: url(images/bg-pattern-card.svg);
+        background-repeat: no-repeat;
+        min-height: 130px;
+        position: relative;
+      }
+      .card__photo {
+        border-radius: 50%;
+        border: 5px solid var(--clr-neutral-100);
+        position: absolute;
+        bottom: -40%;
+        right: calc((100% - 106px) / 2);
+      }
+      .card__middle {
+        padding-top: 4em;
+        padding-bottom: 1.5em;
+        text-align: center;
+        font-size: 1rem;
+      }
+      .muted {
+        color: var(--clr-neutral-400); 
+      }
+      .card__middle .name {
+        font-weight: var(--fw-700);
+      }
+      .card__middle .age {
+        margin-left: 0.1rem;        
+      }
+      .location {
+        font-size: 0.8rem;
+        margin-top: 0.5em;
+      }
+      .flex-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+      .flex-col {
+        display: flex;
+        flex-direction: column;
+      }
+      hr {
+        height: 0px;
+        border-top: 1px solid var(--clr-neutral-400);
+      }
+      .card__bottom {
+        text-align: center;
+        padding: 1em 0em;
+      }
+      .metric {
+        font-weight: var(--fw-700);
+        text-transform: uppercase;
+      }
+      .label {
+        font-size: 0.625rem;
+        letter-spacing: 0.1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card__top">
+        <img src="images/image-victor.jpg" class="card__photo" alt="" />
+      </div>
+      <div class="card__middle">
+        <span class="name">Victor Crest</span>
+        <span class="age muted">26</span>
+        <div class="location muted">London</div>
+      </div>
+      <hr/>
+      <div class="card__bottom flex-row">
+        <div class="flex-col">
+          <div class="metric">80k</div>
+          <div class="label muted">Followers</div>
+        </div>
+        <div class="flex-col">
+          <div class="metric">803k</div>
+          <div class="label muted">Likes</div>
+        </div>
+        <div class="flex-col">
+          <div class="metric">1.4k</div>
+          <div class="label muted">Photos</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
